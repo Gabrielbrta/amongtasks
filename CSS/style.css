@@ -1,0 +1,554 @@
+@font-face {
+  font-family: 'Amoong';
+  font-family: 'among';
+  src: url('/Impostograph-Regular.ttf') format('truetype');
+  src: url('/joffrey.ttf') format('truetype');
+}
+
+
+:root{
+  --font-codigo: 'Mali', cursive;
+  --font-rpgmaker:'VT323', monospace;
+}
+
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  user-select: none;
+}
+
+img{
+  max-width: 100%;
+
+}
+
+body{
+  background:black;
+  background-image: url('/assets/SVG/starts.svg');
+  animation: cosmo 300s infinite ease;
+}
+
+section{
+  animation: transition .7s ease;
+  transition: .3s;
+  color:  white;
+}
+#home{
+  display: block;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 600px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.container h1, .container h2{
+  font-family: 'among', Arial, Helvetica, sans-serif;
+  font-size: 12rem;
+  color: white;
+  font-weight: 400;
+  text-align: center;
+}
+.container h2{
+  text-align: center;
+  font-size: 10rem;
+}
+
+
+@keyframes cosmo {
+  0%{
+    background-position-x: -0%;
+  }
+  100%{
+    background-position-x:  -10000%;
+  }
+
+}
+
+.character{
+  width: 100%;
+  display: none;
+}
+.character .container{
+  flex-direction: row; 
+  justify-content: center;
+}
+
+div.slide{
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+}
+.slide h1{
+  font-size: 6rem;
+  padding: 5px;
+}
+
+div.container-slide{
+  display: flex;
+  align-items: center;
+  width: 600px;
+  margin: 0 auto;
+}
+.arrow{
+  cursor: pointer;
+  margin: 0 30px;
+}
+
+.char-lista{
+  display: flex;
+  border-radius: 10px;
+  height: auto;
+  width: 200px;
+  overflow-x: hidden;
+  margin: 30px auto;
+}
+
+
+.char-lista::-webkit-scrollbar{
+  display: none;
+}
+
+
+.char-lista img{
+  justify-content: space-between;
+  cursor: pointer;
+  margin: 10px;
+  width: 100%;
+}
+
+.char-lista img:hover{
+  filter: drop-shadow(0 0 10px #FFFF);
+}
+
+
+.nome{
+  color: #fcfcfc;
+  font-size: 4em;
+}
+.nome input{
+  background: transparent;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.459);
+  padding: 10px;
+  text-align: center;
+  font-size: 4rem;
+  color: #fcfcfc;
+  margin: 20px;
+  font-family: 'among', Arial, Helvetica, sans-serif;
+}
+.nome input.verifique{
+  border: 2px solid rgba(255, 0, 0, 0.459);
+  animation: alert .2s ease;
+}
+
+@keyframes alert {
+  0%{
+    transform: translate3d(-20px, 0, 0);
+  }
+  50%{
+    transform: translate3d(20px, 0, 0);
+  }
+  100%{
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+.nome span{
+  display: block;
+  text-align: center;
+  margin: 10px;
+  font-family: 'among', Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  color: #9BB700;
+  transition: .2s;
+}
+
+.nome span:hover{
+  color: #c7e904;
+}
+
+@keyframes transition{
+  from {
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+section.apresentacao{
+  display: none;
+}
+
+.apresentacao .container{
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.scan-background{
+  min-width: 50%;
+  max-width: 280px;
+  height: auto;
+  margin: 0 auto;
+  background: linear-gradient(90deg, #105675, #C6DEE2);
+  padding: 10px;
+  color: #849698;
+  font-weight: bold;
+  font-family: var(--font-rpgmaker), Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  text-shadow: 1px 1px 2px black;
+  border-radius: 5px;
+}
+.scan-background span{
+  color: rgb(196, 33, 33);
+}
+
+.scan-background p {
+  letter-spacing: 6px;
+  color: #2f3131;
+  font-weight: 300;
+}
+
+.informacoes{
+  align-self: center;
+  text-align: start;
+  background: #000100;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px black;
+  margin: 10px;
+}
+
+.informacoes p {
+  padding: 10px;
+  font-size: 2rem;
+  color: #C6DEE2;
+  font-family: var(--font-rpgmaker);
+  
+}
+[data-nome="peso"] span{
+  font-size: 2rem;
+  color: #C6DEE2;
+  font-weight: normal;
+  font-family: var(--font-rpgmaker);
+}
+
+.personagem{
+  display: none;
+  position: absolute;
+  width: 200px;
+  top: -55%;
+  right: 15%;
+  z-index: 3;
+}
+.personagem.active{
+  display: block;
+  animation: scanning 14s ease;
+}
+
+@keyframes scanning {
+  0%{
+    filter: drop-shadow(0 0 10px lime); 
+  }
+  15%{
+    filter: drop-shadow(0 0 25px lime); 
+    opacity: .8;
+  }
+  30%{
+    filter: drop-shadow(0 0 10px lime); 
+    opacity: 1;
+  }
+  45%{
+    filter: drop-shadow(0 0 25px lime); 
+    opacity: .8;
+  }
+  60%{
+    filter: drop-shadow(0 0 10px lime); 
+    opacity: 1;
+  }
+  75%{
+    filter: drop-shadow(0 0 25px lime); 
+    opacity: .8;
+  }
+  90%{
+    filter: drop-shadow(0 0 10px lime); 
+    opacity: 1;
+  }
+  95%{
+    filter: drop-shadow(0 0 25px lime); 
+    opacity: .9;
+  }
+  100%{
+    filter: drop-shadow(0 0 10px lime); 
+    opacity: 1;
+  }
+
+}
+
+.medbay{
+  display: block;
+  position: relative;
+  top: 10%;
+}
+.medbay.active{
+  animation: select 3s infinite;
+}
+
+.medbay img{
+  width: 300px;
+}
+.medbay .launchpad img:hover{
+  filter: drop-shadow(0 0 5px #c7e904);
+  cursor:pointer;
+}
+
+@keyframes select {
+  0%{
+    filter: drop-shadow(0 0 0px #c7e904);
+  }
+  50%{
+    filter: drop-shadow(0 0 10px #c7e904);
+  }
+  100%{
+    filter: drop-shadow(0 0 0px #c7e904);
+  }
+ 
+}
+
+.scan{
+  display: none;
+  position: absolute;
+  background: linear-gradient(180deg, transparent, rgb(36, 218, 36), transparent);
+  filter: drop-shadow(0 0 10 rgb(0, 255, 0));
+  height: 20px;
+  top: 50%;
+  right: 22%;
+  border-radius: 30px;
+  z-index: 3;
+  animation: scan 14s ease;
+}
+
+.scan.active{
+  animation: scan 14s ease;
+  display: block;
+}
+
+@keyframes scan{
+  0%{
+    width: 100px;
+    top: 50%;
+  }
+  15%{
+    width: 180px;
+  }
+  50%{
+    width: 180px;
+    top: -60%;
+  }
+  100%{
+    width: 180px;
+    top: 50%;
+  }
+}
+
+.contador-bg{
+  background: linear-gradient(90deg, #105675, #C6DEE2);
+  border-radius: 5px;
+  min-width: 50%;
+  max-width: 280px;
+  height: auto;
+  margin: 0 auto;
+  padding: 10px;
+  align-self: flex-end;
+}
+
+.bg-green{
+  margin: 0 auto;
+  min-width: 95%;
+  max-width: 280px;
+  height: 40px;
+  background: #000100;
+  border-radius: 5px;
+}
+
+.barra-verde{
+  width: 5px;
+  height: 38px;
+  background: lime;
+  border-radius: 5px; 
+}
+
+.barra-verde.active{
+  animation: loading 14s ease forwards;
+}
+
+@keyframes loading{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 100%;
+  }
+}
+
+.contagem-regressiva{
+  min-width: 95%;
+  max-width: 280px;
+  height: 60px;
+  background: #000100;
+  border-radius: 5px;
+  margin: 10px auto;
+}
+
+.contagem-regressiva p{
+  font-family: var(--font-rpgmaker);
+  font-size: 3rem;
+  padding: 10px;
+  display: none;
+}
+
+#sequencia.button-section,
+#escudo.button-section {
+  display: none;
+  position: absolute;
+  text-align: center;
+  border: 5px solid white;
+  background: black;
+  padding: 10px 40px;
+  border-radius: 15px;
+  right: 0px;
+  bottom: 0px;
+  margin: 10px;
+  cursor: pointer;
+  transition: .2s;
+  filter: drop-shadow(0 0 1px white);
+}
+
+#sequencia.button-section,
+#escudo.button-section p{
+  font-family: 'Among', Arial, Helvetica, sans-serif;
+  filter: drop-shadow(0 0 1px white);
+  font-size: 3rem;
+  color: white;
+  letter-spacing: 5px;
+}
+
+
+/* Codigo ========== */
+
+.codigo-container{
+  position: relative;
+  display: none;
+  max-width: 800px;
+  height: 600px;
+  background: #DBE7F0;
+  margin:  0 auto;
+  border: 10px solid #5B6978;
+  border-radius: 20px;
+}
+
+.admin-card{
+  position: absolute;
+  bottom: 50%;
+}
+.card-mask{
+  position: absolute;
+  z-index: 2;
+  bottom: 50%;
+}
+.card-mask p{
+  position: absolute;
+  top: 40px;
+  right: 25px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(235, 228, 228);
+  filter: drop-shadow(0px 0px 1px rgb(0, 0, 0));
+  text-shadow: 1px 1px 1px black;
+  font-family: var(--font-codigo);
+}
+
+.admin-mask{
+  position: relative;
+  opacity: 0;
+}
+
+.codigo-green{
+  width: 650px;
+  height: auto;
+  background: #55B472;
+  margin: auto;
+  border: 10px solid #5B6978;
+  border-radius: 20px;
+}
+
+
+.numeros-container{
+  display: flex;
+  flex-wrap: wrap;
+  width: 325px;
+  height: auto;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.numero{
+  font-size: 4rem;
+  font-family: var(--font-rpgmaker);
+  font-weight: 600;
+  width: 80px;
+  padding: 10px 20px;
+  margin: 10px;
+  background: #ACD3B5;
+  border: 5px solid #DEF0E3;
+  border-radius: 10px;
+  max-width: 100px;
+  text-align: center; 
+  cursor: pointer;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+.numero-caixa {
+  width: 325px;
+}
+.numero-caixa input{
+  padding: 10px;
+  width: 300px;
+  height: 100px;
+  margin: 0 auto;
+  outline: none;
+  background: #70BD87;
+  border: 5px solid #DEF0E3;
+  border-radius: 10px;
+  font-size: 5rem;
+  text-align: center;
+  color: rgb(39, 124, 39);
+  font-family: var(--font-rpgmaker);
+}
+
+.confirmar {
+  background: #2f994fd3;
+}
+.confirmar *{
+  filter: drop-shadow(0 0 2px rgb(20, 233, 56));  
+}
+
+.apagar{
+  background: rgba(136, 2, 2, 0.678);
+}
+.apagar *{
+  filter: drop-shadow(0 0 2px rgba(255, 0, 0, 0.822));  
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Among Us Tasks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+  <section class="home" id="home">
+    <div class="container">
+      <div class="logo">
+        <h1>AMONG US</h1>
+        <h2>Tasks</h2>
+      </div>
+      <div class="start">
+        <a href="#" id="character" class="button-section"><img src="assets/images/startButton(2).png" alt="botão de start"></a>
+      </div>
+    </div>
+  </section>
+  <section class="character">
+    <div class="container">
+      <div class="slide">
+        <h1>Escolha seu tripulante</h1>
+        <div class="container-slide">
+
+          <div><img class="arrow" id="left" src="./assets/images/arrow-left.png" alt="seta"></div>
+          <div class="char-lista">
+            <img src="./assets/SVG/character/Black.svg" alt="personagem preto">
+          </div>
+          <div><img class="arrow" id="right" src="./assets/images/arrow-right.png" alt="seta"></div>
+
+        </div>
+      </div>
+      <div class="nome">
+        <input type="text" placeholder="Nome" id="nome" required value="" maxlength="16">
+        <span id="apresentacao" class="button-section">Primeira Task 🡒</span>
+      </div>
+    </div>
+  </section>
+  <section class="apresentacao">
+    <div class="container">
+      <div class="scan-background" data-scan="active">
+        <p><span>Verificando</span>-dados</p>
+        <div class="informacoes">
+          <p data-nome="nome">Nome: <span></span></p>
+          <p data-nome="peso">Peso: <span></span></p>
+        </div>
+      </div>
+      <div class="medbay active" data-scan="remove">
+        <div class="personagem" data-scan="active">
+          <img src="./assets/SVG/character/Black.svg" alt="">
+        </div>
+        <div class="launchpad" data-scan="active">
+          <img src="./assets/images/medbay.png" alt="launchpad">
+        </div>
+        <div class="scan" data-scan="active"></div>
+      </div>
+      <div class="contador-bg" data-scan="active">
+        <div class="bg-green">
+          <div class="barra-verde" data-scan="active"></div>
+        </div>
+        <div class="contagem-regressiva">
+          <p data-scan="active">Scanning Complete in <span class="contador"></span></p>
+        </div>
+      </div>
+      <span id="sequencia" class="button-section"><p>Proxima Task</p></span>
+    </div>
+  </section>
+  <section class="codigo-container">
+    <div class="admin-card">
+      <img src="./assets/images/Admin_card.webp" alt="">
+    </div>
+    <div class="card-mask">
+      <img class="admin-mask" src="./assets/images/Admin_card.webp" alt="">
+      <p class="code"></p>
+    </div>
+    <div class="codigo-green">
+      <div class="numeros-container">
+        <div class="numero tecla">1</div>
+        <div class="numero tecla">2</div>
+        <div class="numero tecla">3</div>
+        <div class="numero tecla">4</div>
+        <div class="numero tecla">5</div>
+        <div class="numero tecla">6</div>
+        <div class="numero tecla">7</div>
+        <div class="numero tecla">8</div>
+        <div class="numero tecla">9</div>
+        <div class="numero apagar">
+          <!-- <a href="https://www.flaticon.com/br/icones-gratis/pare" title="pare ícones"></a> -->
+          <img src="./assets/images/excluir.png" alt="">
+        </div>
+        <div class="numero tecla">0</div>
+        <div class="numero confirmar">
+          <img src="./assets/images/confirme.png" alt="">
+        </div>
+      </div>
+      <div class="numero-caixa">
+        <input type="number" readonly  maxlength="5" name="codigo" id="codigo">
+      </div>
+    </div>
+    <span id="escudo" class="button-section"><p>Proxima Task</p></span>
+  </section>
+  <script src="./script.js"></script>
+</body>
+</html>
