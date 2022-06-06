@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'Amoong';
   font-family: 'among';
-  src: url('/Impostograph-Regular.ttf') format('truetype');
-  src: url('/joffrey.ttf') format('truetype');
+  src: url(/Impostograph-Regular.ttf) format('truetype');
+  src: url(/joffrey.ttf) format('truetype');
 }
 
 
@@ -27,7 +27,7 @@ img{
 
 body{
   background:black;
-  background-image: url('/assets/SVG/starts.svg');
+  background-image: url(/assets/SVG/starts.svg);
   animation: cosmo 300s infinite ease;
 }
 
@@ -50,7 +50,7 @@ section{
 }
 
 .container h1, .container h2{
-  font-family: 'among', Arial, Helvetica, sans-serif;
+  font-family: 'Amoong', Arial, Helvetica, sans-serif;
   font-size: 12rem;
   color: white;
   font-weight: 400;
