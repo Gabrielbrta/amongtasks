@@ -1,7 +1,10 @@
+@font-face {
+  font-family: 'Among';
+  src: url('/Impostograph-Regular.otf') format('opentype');
+  src: url('/Impostograph-Regular.ttf') format('truetype');
 
-
+}
 :root{
-  --font-among:'Amatic SC', cursive;
   --font-codigo: 'Mali', cursive;
   --font-rpgmaker:'VT323', monospace;
 }
@@ -22,9 +25,8 @@ img{
 
 body{
   background:black;
-  background-image: url('/assets/images/starts.png');
-  animation: cosmo 4000s infinite ease;
-  
+  background-image: url('/assets/SVG/starts.svg');
+  animation: cosmo 300s infinite ease;
 }
 
 section{
@@ -46,15 +48,15 @@ section{
 }
 
 .container h1, .container h2{
-  font-family: var(--font-among);
-  font-size: 10rem;
+  font-family: 'Among', Arial, Helvetica, sans-serif;
+  font-size: 15rem;
   color: white;
   font-weight: 400;
   text-align: center;
 }
 .container h2{
   text-align: center;
-  font-size: 8rem;
+  font-size: 10rem;
 }
 
 
@@ -83,7 +85,7 @@ div.slide{
   width: 100%;
 }
 .slide h1{
-  font-size: 6rem;
+  font-size: 10rem;
   padding: 5px;
 }
 
@@ -138,7 +140,7 @@ div.container-slide{
   font-size: 4rem;
   color: #fcfcfc;
   margin: 20px;
-  font-family: var(--font-among);
+  font-family: 'Among', Arial, Helvetica, sans-serif;
 }
 .nome input.verifique{
   border: 2px solid rgba(255, 0, 0, 0.459);
@@ -162,7 +164,7 @@ div.container-slide{
   display: block;
   text-align: center;
   margin: 10px;
-  font-family: var(--font-among);
+  font-family: 'Among', Arial, Helvetica, sans-serif;
   cursor: pointer;
   color: #9BB700;
   transition: .2s;
@@ -201,7 +203,7 @@ section.apresentacao{
   padding: 10px;
   color: #849698;
   font-weight: bold;
-  font-family: var(--font-rpgmaker), Arial, Helvetica, sans-serif;
+  font-family: 'Among', Arial, Helvetica, sans-serif;
   font-size: 3rem;
   text-align: center;
   text-shadow: 1px 1px 2px black;
@@ -230,14 +232,13 @@ section.apresentacao{
   padding: 10px;
   font-size: 2rem;
   color: #C6DEE2;
-  font-family: var(--font-rpgmaker);
   
 }
 [data-nome="peso"] span{
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #C6DEE2;
   font-weight: normal;
-  font-family: var(--font-rpgmaker);
+  font-family: monospace;
 }
 
 .personagem{
@@ -408,8 +409,8 @@ section.apresentacao{
 }
 
 .contagem-regressiva p{
-  font-family: var(--font-rpgmaker);
-  font-size: 3rem;
+  font-family: monospace;
+  font-size: 1.5rem;
   padding: 10px;
   display: none;
 }
@@ -433,7 +434,7 @@ section.apresentacao{
 
 #sequencia.button-section,
 #escudo.button-section p{
-  font-family: var(--font-among);
+  font-family: 'Among', Arial, Helvetica, sans-serif;
   filter: drop-shadow(0 0 1px white);
   font-size: 3rem;
   color: white;
